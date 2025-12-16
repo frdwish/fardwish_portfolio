@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { FaPinterest } from 'react-icons/fa';
-import profileImage from 'figma:asset/d5ecfab3dbbfa7654faf0f7cd264d472b0eb4214.png';
+import profileImage from 'figma:asset/IMG_20251206_222915 2.jpeg';
 
 export function Hero() {
   return (
