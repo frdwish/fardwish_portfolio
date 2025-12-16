@@ -24,7 +24,7 @@ export function Hero() {
 
         <div className="flex justify-center gap-4 mb-12">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/frdwish"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-white/10 hover:bg-[#FFC700] text-white hover:text-black transition-all"
@@ -32,7 +32,7 @@ export function Hero() {
             <Github size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/frdwish"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-white/10 hover:bg-[#FFC700] text-white hover:text-black transition-all"
@@ -40,7 +40,7 @@ export function Hero() {
             <Linkedin size={24} />
           </a>
           <a
-            href="https://pinterest.com/yourusername"
+            href="https://in.pinterest.com/iamfrdshso/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-white/10 hover:bg-[#FFC700] text-white hover:text-black transition-all"
@@ -48,7 +48,7 @@ export function Hero() {
             <FaPinterest size={24} />
           </a>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:mdfardwish120@gmail.com"
             className="p-3 rounded-full bg-white/10 hover:bg-[#FFC700] text-white hover:text-black transition-all"
           >
             <Mail size={24} />

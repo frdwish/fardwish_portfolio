@@ -1,6 +1,9 @@
 import { ExternalLink, Github, CheckCircle2 } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import recycloVisionImage from 'figma:asset/3fbe594fdd242debdcd078a6df63519023c05a92.png';
+import customerImage from '../assets/customer.jpeg';
+import successImage from '../assets/success.jpeg';
+import automateImage from '../assets/automate.jpeg';
 
 const projects = [
   {
@@ -9,7 +12,7 @@ const projects = [
     description: 'A computer vision-based machine learning project that automatically identifies and sorts waste materials into categories such as plastic, paper, metal, and glass using deep learning models.',
     tags: ['Python', 'OpenCV', 'CNN', 'TensorFlow'],
     image: recycloVisionImage,
-    github: 'https://github.com/yourusername/RecycloVision-AI-Waste-Sorting',
+    github: 'https://github.com/frdwish/RecycloVision-AI-Waste-Sorting',
     demo: '#',
     highlights: [
       'Automated waste classification with 90%+ accuracy',
@@ -22,8 +25,8 @@ const projects = [
     title: 'Customer Support Classifier',
     description: 'End-to-end NLP system built with FastAPI and Streamlit that intelligently classifies customer support tickets into categories like billing, technical issues, cancellations, and general inquiries.',
     tags: ['Python', 'NLP', 'FastAPI', 'Streamlit', 'TF-IDF', 'XGBoost'],
-    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800',
-    github: 'https://github.com/yourusername/customer-support-classifier',
+    image: customerImage,
+    github: 'https://github.com/frdwish/customer-support-classifier',
     demo: '#',
     highlights: [
       'Multi-class text classification with XGBoost',
@@ -37,7 +40,7 @@ const projects = [
     description: 'A comprehensive data analysis project that extracts meaningful insights from YouTube channel performance metrics and visualizes them through an interactive dashboard with various charts and graphs.',
     tags: ['Python', 'Jupyter Notebook', 'Pandas', 'Matplotlib'],
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
-    github: 'https://github.com/yourusername/youtube-analytics-dashboard',
+    github: 'https://github.com/frdwish/youtube-analytics-dashboard',
     demo: '#',
     highlights: [
       'Data-driven insights on channel performance',
@@ -50,8 +53,8 @@ const projects = [
     title: 'Student Success Predictor',
     description: 'A machine learning model that predicts student performance and success rates using various academic and demographic factors, deployed as an interactive web application using Streamlit.',
     tags: ['Python', 'Scikit-Learn', 'Streamlit'],
-    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800',
-    github: 'https://github.com/yourusername/student-success-predictor',
+    image: successImage,
+    github: 'https://github.com/frdwish/student-success-predictor',
     demo: '#',
     highlights: [
       'Predictive modeling with scikit-learn',
@@ -64,8 +67,8 @@ const projects = [
     title: 'To Automate or Not Chatbot',
     description: 'A lightweight Python-based conversational chatbot that helps users decide whether a specific workflow or task should be automated, using decision tree logic and interactive queries.',
     tags: ['Python', 'Chatbot', 'NLP'],
-    image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800',
-    github: 'https://github.com/yourusername/To-Automate-or-not-chatbot',
+    image: automateImage,
+    github: 'https://github.com/frdwish/To-Automate-or-not-chatbot',
     demo: '#',
     highlights: [
       'Decision-making assistant for automation',
