@@ -3,7 +3,6 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { ProjectReports } from './components/ProjectReports';
-import { CaseStudies } from './components/CaseStudies';
 import { Creativity } from './components/Creativity';
 import { Footer } from './components/Footer';
 
@@ -12,7 +11,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'projects', 'reports', 'case-studies', 'creativity'];
+      const sections = ['home', 'projects', 'reports', 'creativity'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -59,10 +58,6 @@ export default function App() {
         
         <div id="reports">
           <ProjectReports />
-        </div>
-        
-        <div id="case-studies">
-          <CaseStudies />
         </div>
         
         <div id="creativity">

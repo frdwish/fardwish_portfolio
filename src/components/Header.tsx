@@ -13,7 +13,6 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
     { id: 'home', label: 'Home' },
     { id: 'projects', label: 'Projects' },
     { id: 'reports', label: 'Project Reports' },
-    { id: 'case-studies', label: 'Case Studies' },
     { id: 'creativity', label: 'Creativity' },
   ];
 
