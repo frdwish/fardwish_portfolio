@@ -13,7 +13,7 @@ export function Hero() {
         </div>
         
         <h1 className="text-white mb-4 text-4xl sm:text-5xl md:text-6xl font-bold">
-          Hi, I'm <span className="text-[#FFC700]">Frdwish</span>
+          Hi, I'm <span className="text-[#FFC700]">Fardwish</span>
         </h1>
         
         <p className="text-gray-400 mb-8 max-w-2xl mx-auto text-lg">

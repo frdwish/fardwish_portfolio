@@ -20,6 +20,7 @@
         'figma:asset/d5ecfab3dbbfa7654faf0f7cd264d472b0eb4214.png': path.resolve(__dirname, './src/assets/d5ecfab3dbbfa7654faf0f7cd264d472b0eb4214.png'),
         'figma:asset/3fbe594fdd242debdcd078a6df63519023c05a92.png': path.resolve(__dirname, './src/assets/3fbe594fdd242debdcd078a6df63519023c05a92.png'),
         'figma:asset/IMG_20251206_222915 2.jpeg': path.resolve(__dirname, './src/assets/IMG_20251206_222915 2.jpeg'),
+        'figma:asset/khirdki.jpg': path.resolve(__dirname, './src/assets/khirdki.jpg'),
         'embla-carousel-react@8.6.0': 'embla-carousel-react',
         'cmdk@1.1.1': 'cmdk',
         'class-variance-authority@0.7.1': 'class-variance-authority',

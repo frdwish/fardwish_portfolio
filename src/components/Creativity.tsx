@@ -1,8 +1,18 @@
 import { Music, FileText, Mic, Image as ImageIcon, Clock } from 'lucide-react';
 import { useState } from 'react';
+import khirdkiImage from 'figma:asset/khirdki.jpg';
 
 const songs = [
-  { id: 1, title: 'Song Title (Coming Soon)', duration: '—', genre: 'Coming Soon', isAvailable: false },
+  {
+    id: 1,
+    title: 'Khirdki ke bahr-',
+    status: 'Coming Soon',
+    image: khirdkiImage,
+    link: null,
+    isAvailable: true,
+    genre: 'Indie Pop',
+  },
+
   { id: 2, title: 'Song Title (Coming Soon)', duration: '—', genre: 'Coming Soon', isAvailable: false },
   { id: 3, title: 'Song Title (Coming Soon)', duration: '—', genre: 'Coming Soon', isAvailable: false },
   { id: 4, title: 'Song Title (Coming Soon)', duration: '—', genre: 'Coming Soon', isAvailable: false },
@@ -87,20 +97,30 @@ export function Creativity() {
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <button 
-                      disabled={!song.isAvailable}
-                      className={`p-3 rounded-full transition-colors ${
-                        song.isAvailable
-                          ? 'bg-[#FFC700] hover:bg-[#FFD700] text-black'
-                          : 'bg-white/5 text-gray-600 cursor-not-allowed'
-                      }`}
-                    >
-                      {song.isAvailable ? (
-                        <Music size={20} />
-                      ) : (
-                        <Clock size={20} />
-                      )}
-                    </button>
+                    {song.image ? (
+                      <div className="w-4 h-4 rounded-full overflow-hidden flex-shrink-0 border border-[#FFC700]">
+                        <img 
+                          src={song.image} 
+                          alt={song.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <button 
+                        disabled={!song.isAvailable}
+                        className={`p-3 rounded-full transition-colors flex-shrink-0 ${
+                          song.isAvailable
+                            ? 'bg-[#FFC700] hover:bg-[#FFD700] text-black'
+                            : 'bg-white/5 text-gray-600 cursor-not-allowed'
+                        }`}
+                      >
+                        {song.isAvailable ? (
+                          <Music size={20} />
+                        ) : (
+                          <Clock size={20} />
+                        )}
+                      </button>
+                    )}
                     <div>
                       <div className={song.isAvailable ? 'text-white' : 'text-gray-600'}>
                         {song.title}

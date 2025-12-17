@@ -144,7 +144,7 @@ export function ProjectReports() {
 
                   <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
                     <div className="flex items-center gap-1">
-                      <Calendar size={16} />
+                      <Calendar size={6} />
                       <span>TBA</span>
                     </div>
                     <div>— pages</div>
