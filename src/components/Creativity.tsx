@@ -1,21 +1,35 @@
 import { Music, FileText, Mic, Image as ImageIcon, Clock } from 'lucide-react';
 import { useState } from 'react';
-import khirdkiImage from 'figma:asset/khirdki.jpg';
 
 const songs = [
   {
     id: 1,
     title: 'Khirdki ke bahr-',
-    status: 'Coming Soon',
-    image: khirdkiImage,
-    link: null,
-    isAvailable: true,
     genre: 'Indie Pop',
+    isAvailable: true,
+    link: 'https://your-song-link.com', // ✅ add real link later
   },
-
-  { id: 2, title: 'Song Title (Coming Soon)', duration: '—', genre: 'Coming Soon', isAvailable: false },
-  { id: 3, title: 'Song Title (Coming Soon)', duration: '—', genre: 'Coming Soon', isAvailable: false },
-  { id: 4, title: 'Song Title (Coming Soon)', duration: '—', genre: 'Coming Soon', isAvailable: false },
+  {
+    id: 2,
+    title: 'Song Title (Coming Soon)',
+    genre: 'Coming Soon',
+    isAvailable: false,
+    link: null,
+  },
+  {
+    id: 3,
+    title: 'Song Title (Coming Soon)',
+    genre: 'Coming Soon',
+    isAvailable: false,
+    link: null,
+  },
+  {
+    id: 4,
+    title: 'Song Title (Coming Soon)',
+    genre: 'Coming Soon',
+    isAvailable: false,
+    link: null,
+  },
 ];
 
 const lyrics = [
@@ -83,174 +97,128 @@ export function Creativity() {
           })}
         </div>
 
-        {/* Content */}
+        {/* CONTENT */}
         <div className="max-w-5xl mx-auto">
+
+          {/* SONGS */}
           {activeTab === 'songs' && (
             <div className="space-y-4">
-              {songs.map((song) => (
-                <div
-                  key={song.id}
-                  className={`flex items-center justify-between p-4 rounded-lg transition-all ${
-                    song.isAvailable
-                      ? 'bg-white/5 hover:bg-white/10 border border-white/10'
-                      : 'bg-white/[0.02] border border-white/5'
-                  }`}
-                >
-                  <div className="flex items-center gap-4">
-                    {song.image ? (
-                      <div className="w-4 h-4 rounded-full overflow-hidden flex-shrink-0 border border-[#FFC700]">
-                        <img 
-                          src={song.image} 
-                          alt={song.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ) : (
-                      <button 
-                        disabled={!song.isAvailable}
-                        className={`p-3 rounded-full transition-colors flex-shrink-0 ${
-                          song.isAvailable
-                            ? 'bg-[#FFC700] hover:bg-[#FFD700] text-black'
-                            : 'bg-white/5 text-gray-600 cursor-not-allowed'
+              {songs.map((song) => {
+                const card = (
+                  <>
+                    <div className="flex items-center gap-4">
+                      <div
+                        className={`p-3 rounded-full ${
+                          song.isAvailable && song.link
+                            ? 'bg-[#FFC700] text-black'
+                            : 'bg-white/5 text-gray-600'
                         }`}
                       >
-                        {song.isAvailable ? (
-                          <Music size={20} />
-                        ) : (
-                          <Clock size={20} />
-                        )}
-                      </button>
-                    )}
-                    <div>
-                      <div className={song.isAvailable ? 'text-white' : 'text-gray-600'}>
-                        {song.title}
+                        {song.isAvailable && song.link ? <Music size={20} /> : <Clock size={20} />}
                       </div>
-                      <div className="text-gray-500 text-sm">{song.genre}</div>
+
+                      <div>
+                        <div className={song.isAvailable ? 'text-white' : 'text-gray-600'}>
+                          {song.title}
+                        </div>
+                        <div className="text-gray-500 text-sm">{song.genre}</div>
+                      </div>
                     </div>
+
+                    <div className="text-sm font-semibold">
+                      {song.link && song.isAvailable ? (
+                        <span className="text-[#FFC700]">Play →</span>
+                      ) : (
+                        <span className="text-gray-600">Coming Soon</span>
+                      )}
+                    </div>
+                  </>
+                );
+
+                return song.link && song.isAvailable ? (
+                  <a
+                    key={song.id}
+                    href={song.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-all"
+                  >
+                    {card}
+                  </a>
+                ) : (
+                  <div
+                    key={song.id}
+                    className="flex items-center justify-between p-4 rounded-lg bg-white/[0.02] border border-white/5 cursor-not-allowed"
+                  >
+                    {card}
                   </div>
-                  <div className="text-gray-500">{song.duration}</div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
 
+          {/* LYRICS */}
           {activeTab === 'lyrics' && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {lyrics.map((lyric) => (
                 <div
                   key={lyric.id}
-                  className={`p-6 rounded-lg border transition-all ${
-                    lyric.isAvailable
-                      ? 'bg-gradient-to-br from-[#FFC700]/10 to-white/5 border-white/10 hover:shadow-lg hover:shadow-[#FFC700]/10'
-                      : 'bg-white/[0.02] border-white/5'
-                  }`}
+                  className="p-6 rounded-lg bg-white/[0.02] border border-white/5"
                 >
-                  <h3 className={`mb-4 text-xl font-bold ${lyric.isAvailable ? 'text-white' : 'text-gray-600'}`}>
+                  <h3 className="mb-4 text-xl font-bold text-gray-600">
                     {lyric.title}
                   </h3>
-                  <p className={`italic mb-4 ${lyric.isAvailable ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <p className="italic mb-4 text-gray-600">
                     {lyric.preview}
                   </p>
-                  <button 
-                    disabled={!lyric.isAvailable}
-                    className={`transition-colors font-semibold ${
-                      lyric.isAvailable
-                        ? 'text-[#FFC700] hover:text-[#FFD700]'
-                        : 'text-gray-600 cursor-not-allowed'
-                    }`}
-                  >
-                    {lyric.isAvailable ? 'Read Full Lyrics →' : 'Not Available Yet'}
-                  </button>
+                  <span className="text-gray-600">Not Available Yet</span>
                 </div>
               ))}
             </div>
           )}
 
+          {/* RECORDINGS */}
           {activeTab === 'recordings' && (
             <div className="space-y-4">
               {recordings.map((recording) => (
                 <div
                   key={recording.id}
-                  className={`flex items-center justify-between p-6 rounded-lg border transition-all ${
-                    recording.isAvailable
-                      ? 'bg-white/5 border-white/10 hover:border-[#FFC700]'
-                      : 'bg-white/[0.02] border-white/5'
-                  }`}
+                  className="flex items-center justify-between p-6 rounded-lg bg-white/[0.02] border border-white/5"
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`p-3 rounded-lg ${
-                      recording.isAvailable ? 'bg-red-500/20' : 'bg-white/5'
-                    }`}>
-                      {recording.isAvailable ? (
-                        <Mic className="text-red-500" size={24} />
-                      ) : (
-                        <Clock className="text-gray-600" size={24} />
-                      )}
+                    <div className="p-3 rounded-lg bg-white/5">
+                      <Clock className="text-gray-600" size={24} />
                     </div>
                     <div>
-                      <div className={recording.isAvailable ? 'text-white' : 'text-gray-600'}>
-                        {recording.title}
-                      </div>
-                      <div className="text-gray-500 text-sm">
-                        {recording.type}
-                        {recording.date && ` • ${new Date(recording.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`}
-                      </div>
+                      <div className="text-gray-600">{recording.title}</div>
+                      <div className="text-gray-500 text-sm">{recording.type}</div>
                     </div>
                   </div>
-                  <button 
-                    disabled={!recording.isAvailable}
-                    className={`px-4 py-2 rounded-lg transition-colors font-semibold ${
-                      recording.isAvailable
-                        ? 'bg-[#FFC700] hover:bg-[#FFD700] text-black'
-                        : 'bg-white/5 text-gray-600 cursor-not-allowed'
-                    }`}
-                  >
-                    {recording.isAvailable ? 'Listen' : 'Not Available'}
-                  </button>
+                  <span className="text-gray-600">Not Available</span>
                 </div>
               ))}
             </div>
           )}
 
+          {/* PINTEREST */}
           {activeTab === 'pinterest' && (
             <div>
-              <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
-                <p className="text-gray-400">
-                  My curated collections of visual inspiration and creative ideas (Coming Soon)
-                </p>
-                <a
-                  href="https://pinterest.com/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#FFC700] hover:text-[#FFD700] transition-colors font-semibold"
-                >
-                  View on Pinterest →
-                </a>
-              </div>
+              <p className="text-gray-400 mb-6">
+                My curated collections of visual inspiration (Coming Soon)
+              </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {pinterestBoards.map((board) => (
-                  <div
-                    key={board.id}
-                    className="group"
-                  >
-                    <div className="aspect-square rounded-lg overflow-hidden mb-2 bg-white/5 flex items-center justify-center border border-white/10 hover:border-[#FFC700] transition-colors">
-                      {board.isAvailable ? (
-                        <div className="w-full h-full bg-gradient-to-br from-white/10 to-white/5"></div>
-                      ) : (
-                        <Clock className="text-gray-600" size={32} />
-                      )}
+                  <div key={board.id}>
+                    <div className="aspect-square rounded-lg bg-white/5 flex items-center justify-center border border-white/10">
+                      <Clock className="text-gray-600" size={32} />
                     </div>
-                    <h4 className={`font-semibold ${board.isAvailable ? 'text-white' : 'text-gray-600'}`}>
-                      {board.title}
-                    </h4>
-                    <p className="text-gray-500 text-sm">
-                      {board.isAvailable ? `${board.pins} pins` : '— pins'}
-                    </p>
+                    <h4 className="text-gray-600 mt-2">{board.title}</h4>
                   </div>
                 ))}
               </div>
             </div>
           )}
+
         </div>
       </div>
     </section>

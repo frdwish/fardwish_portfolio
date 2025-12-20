@@ -28,9 +28,6 @@ export function Footer() {
                 <a href="#reports" className="hover:text-[#FFC700] transition-colors">Reports</a>
               </li>
               <li>
-                <a href="#case-studies" className="hover:text-[#FFC700] transition-colors">Case Studies</a>
-              </li>
-              <li>
                 <a href="#creativity" className="hover:text-[#FFC700] transition-colors">Creativity</a>
               </li>
             </ul>
@@ -40,7 +37,7 @@ export function Footer() {
             <h3 className="text-white mb-4 font-bold">Connect</h3>
             <div className="flex gap-4">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/frdwish"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-white/5 hover:bg-[#FFC700] hover:text-black rounded-lg transition-all"
@@ -48,7 +45,7 @@ export function Footer() {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/frdwish"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-white/5 hover:bg-[#FFC700] hover:text-black rounded-lg transition-all"
@@ -56,7 +53,7 @@ export function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="https://pinterest.com/yourusername"
+                href="https://pinterest.com/iamfrdshso"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-white/5 hover:bg-[#FFC700] hover:text-black rounded-lg transition-all"
@@ -64,7 +61,7 @@ export function Footer() {
                 <FaPinterest size={20} />
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:mdfardwish120@example.com"
                 className="p-2 bg-white/5 hover:bg-[#FFC700] hover:text-black rounded-lg transition-all"
               >
                 <Mail size={20} />
@@ -75,7 +72,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 text-center text-sm">
           <p className="flex items-center justify-center gap-2">
-            Made with <Heart size={16} className="text-[#FFC700]" fill="currentColor" /> by Frdwish © {currentYear}
+            Made by Frdwish © {currentYear}
           </p>
         </div>
       </div>
